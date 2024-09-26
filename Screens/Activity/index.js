@@ -6,6 +6,7 @@ import IconTextRow from '../../Components/IconTextRow';
 import Colors from '../../Constants/Colors';
 import { Entypo, AntDesign } from '@expo/vector-icons';
 import CustomButton from '../../Components/CustomButton';
+import { baseUrl } from '../../Config';
 
 const Activity = props => {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ const Activity = props => {
         status: filter.status,
       });
       const response = await fetch(
-        `http://192.168.3.247:3000/activities?${queryParams.toString()}`,
+        `${baseUrl}/activities?${queryParams.toString()}`,
         {
           method: 'GET',
         }
